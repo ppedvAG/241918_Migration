@@ -1,0 +1,52 @@
+﻿@page "/Cars"
+@rendermode RenderMode.InteractiveServer
+@using HalloBlazor.Data
+@inject ICarService carService;
+
+<h3>Cars</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Hersteller</th>
+            <th>Modell</th>
+            <th>Leisung [KW]</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in cars)
+        {
+            <tr>
+                <td>@car.Id</td>
+                <td>@car.Manufacturer</td>
+                <td>@car.Model</td>
+                <td>@car.KW</td>
+                <td><button @onclick="(()=>RemoveCar(car.Id))">Kill</button></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+@code {
+    IEnumerable<Car> cars;
+
+    protected override void OnInitialized()
+    {
+        cars = carService.GetCars();
+    }
+
+
+    public void RemoveCars()
+    {
+        cars = cars.Where(x => x.Id != 0);
+    }
+
+    public void RemoveCar(int id)
+    {
+        cars = cars.Where(x => x.Id != id);
+    }
+
+}
