@@ -1,5 +1,5 @@
 ﻿using Bogus;
-using HalloBlazor.Contracts;
+using CarManager.Contracts;
 
 namespace HalloBlazor.Data
 {

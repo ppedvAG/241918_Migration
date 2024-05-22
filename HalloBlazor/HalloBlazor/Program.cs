@@ -1,5 +1,6 @@
+using CarManager.Contracts;
+using CarManager.Data.EfCore;
 using HalloBlazor.Components;
-using HalloBlazor.Contracts;
 using HalloBlazor.Data;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,4 +1,4 @@
-﻿namespace HalloBlazor.Contracts
+﻿namespace CarManager.Contracts
 {
     public interface IRepository
     {

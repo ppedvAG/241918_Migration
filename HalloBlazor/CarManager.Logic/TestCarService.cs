@@ -1,4 +1,6 @@
-﻿namespace HalloBlazor.Data
+﻿using CarManager.Contracts;
+
+namespace HalloBlazor.Data
 {
     public class TestCarService : ICarService
     {

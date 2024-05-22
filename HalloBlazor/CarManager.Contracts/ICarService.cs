@@ -1,5 +1,4 @@
-﻿
-namespace HalloBlazor.Data
+﻿namespace CarManager.Contracts
 {
     public interface ICarService
     {

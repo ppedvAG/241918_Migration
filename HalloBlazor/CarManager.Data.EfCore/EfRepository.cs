@@ -1,6 +1,6 @@
-﻿using HalloBlazor.Contracts;
+﻿using CarManager.Contracts;
 
-namespace HalloBlazor.Data
+namespace CarManager.Data.EfCore
 {
     public class EfRepository : IRepository
     {
@@ -8,13 +8,13 @@ namespace HalloBlazor.Data
 
         public void Add<T>(T entity) where T : class
         {
-            context.Add<T>(entity);
+            context.Add(entity);
             context.SaveChanges();
         }
 
         public void Delete<T>(T entity) where T : class
         {
-            context.Remove<T>(entity);
+            context.Remove(entity);
             context.SaveChanges();
         }
 
@@ -30,7 +30,7 @@ namespace HalloBlazor.Data
 
         public void Update<T>(T entity) where T : class
         {
-            context.Update<T>(entity);
+            context.Update(entity);
             context.SaveChanges();
         }
     }

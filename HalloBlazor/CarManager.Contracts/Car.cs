@@ -1,4 +1,4 @@
-﻿namespace HalloBlazor.Data
+﻿namespace CarManager.Contracts
 {
     public class Car
     {

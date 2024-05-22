@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CarManager.Contracts;
+using Microsoft.EntityFrameworkCore;
 
-namespace HalloBlazor.Data
+namespace CarManager.Data.EfCore
 {
     public class EfContext : DbContext
     {
