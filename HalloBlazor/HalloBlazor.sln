@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarManager.Data.EfCore", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarManager.Logic", "CarManager.Logic\CarManager.Logic.csproj", "{73F23200-29B6-4435-95A4-E291630F0777}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarManager.Logic.Tests", "CarManager.Logic.Tests\CarManager.Logic.Tests.csproj", "{2945A929-E094-4B91-A5B3-A51DCB8659D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{73F23200-29B6-4435-95A4-E291630F0777}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73F23200-29B6-4435-95A4-E291630F0777}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73F23200-29B6-4435-95A4-E291630F0777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2945A929-E094-4B91-A5B3-A51DCB8659D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2945A929-E094-4B91-A5B3-A51DCB8659D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2945A929-E094-4B91-A5B3-A51DCB8659D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2945A929-E094-4B91-A5B3-A51DCB8659D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

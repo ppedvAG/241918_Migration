@@ -22,10 +22,13 @@ namespace HalloBlazor.Data
 
         public void KillCar(Car car)
         {
-            if (car.KW > 200)
+            if (car == null)
+                throw new ArgumentNullException("Nix Auto");
+
+            if (car.KW >= 200)
                 throw new ArgumentException("Ist zu wertvoll!!");
 
-            repository.Delete(car);   
+            repository.Delete(car);
         }
 
         public IEnumerable<Car> GetCars()
