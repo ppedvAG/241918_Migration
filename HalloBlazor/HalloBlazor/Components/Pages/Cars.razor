@@ -1,9 +1,12 @@
 ﻿@page "/Cars"
-@* @rendermode RenderMode.InteractiveServer *@
+@rendermode RenderMode.InteractiveServer
 @using HalloBlazor.Data
 @inject ICarService carService;
+@inject IJSRuntime jsRuntime;
 
 <h3>Cars</h3>
+<button @onclick="@CreateDemoDatenAndLoadCarsFromRepo">Create Demo Daten</button>
+
 <table>
     <thead>
         <tr>
@@ -22,31 +25,47 @@
                 <td>@car.Manufacturer</td>
                 <td>@car.Model</td>
                 <td>@car.KW</td>
-                <td><button @onclick="(()=>RemoveCar(car.Id))">Kill</button></td>
+                <td><button @onclick="(()=>RemoveCar(car))">Kill</button></td>
             </tr>
         }
     </tbody>
 </table>
-
-
 
 @code {
     IEnumerable<Car> cars;
 
     protected override void OnInitialized()
     {
+        LoadCars();
+    }
+
+    void LoadCars()
+    {
         cars = carService.GetCars();
     }
 
+    public void CreateDemoDatenAndLoadCarsFromRepo()
+    {
+        carService.CreateDemoAndSaveDemoData();
+        cars = carService.GetCars();
+    }
 
     public void RemoveCars()
     {
         cars = cars.Where(x => x.Id != 0);
     }
 
-    public void RemoveCar(int id)
+    public async void RemoveCar(Car car)
     {
-        cars = cars.Where(x => x.Id != id);
+        try
+        {
+            carService.KillCar(car);
+            LoadCars();
+        }
+        catch (Exception ex)
+        {
+            await jsRuntime.InvokeVoidAsync("alert",$"Error: {ex.Message}");
+        }
     }
 
 }

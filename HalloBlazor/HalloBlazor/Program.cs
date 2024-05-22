@@ -1,4 +1,5 @@
 using HalloBlazor.Components;
+using HalloBlazor.Contracts;
 using HalloBlazor.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,7 @@ builder.Services.AddRazorComponents()
 
 //builder.Services.AddScoped<ICarService, TestCarService>();
 builder.Services.AddScoped<ICarService, BogusCarService>();
+builder.Services.AddScoped<IRepository, EfRepository>();
 
 var app = builder.Build();
 
