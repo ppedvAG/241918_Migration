@@ -1,0 +1,1 @@
+dotnet ef dbcontext scaffold --context-dir Data --output-dir Models  'Server=(localdb)\mssqllocaldb;Database=Northwnd;Trusted_Connection=true;' Microsoft.EntityFrameworkCore.SqlServer
